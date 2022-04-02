@@ -4,7 +4,12 @@
 
 具体细节请进入脚本查看。
 
-【拉库】    ql repo https://github.com/asd920/Script.git 
+【拉库直连命令】 `ql repo https://github.com/asd920/Script.git`
+
+【国内镜像】（选一个即可）:
+`ql repo https://hub.fastgit.xyz/asd920/Script.git`
+
+`ql repo https://hub.0z.gs/asd920/Script.git`
 
 # 关于小号
 
