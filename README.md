@@ -102,6 +102,38 @@ https://api.kuaishouzt.com/rest/zt/appsupport/yoda/accelerate/info
 </details>
 
 
+### 快手 ks.js
+
+cron 22 10-20 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+普通版的快手，非极速版，CK可以通用
+
+注意现在多一个did的设备参数，必填！多账户@隔开
+
+> 由于我IOS端找不到入口，我就用的极速版抓的CK里提取了did数值，粘贴在后面，任务一样跑
+
+    export ksCookie='kuaishou.api_st=***;did=***;'
+
+默认每天0点自动兑换金币，14点提现，不想提现设置成99，提到微信把`ksPayType=WECHAT;`，提到支付宝把`ksPayType=ALIPAY;`，写到对应账号ck后面
+
+    export ksWithdrawTime='14'
+
+默认提现2块，要改的话把提现金额填到变量。如提现失败，手动接验证码提现一次，自动检测绑定了微信还是支付宝提现账号，都绑定了的话默认提现到微信
+
+>手动提现入口：头像-更多-我的钱包-天降红包提现，默认从高到低提现，固定金额用以下变量
+
+    export ksCash='100'
+
+默认提现时间会触发通知，可以把ksjsbNotify设置成2，每次运行都通知；为0，则不通知
+
+    export ksNotify='0'
+
+</details>
+
+
 ### 康师傅畅饮社wx_ksfcys.js
 
 cron 42 9,18 * * *
