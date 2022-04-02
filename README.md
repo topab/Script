@@ -37,7 +37,7 @@ cron 0 9 * * * 一天一次
 
 * [x] 多账户：用@隔开
 
-抓GET包，进小程序获取数据，邀请码请填作者肥皂的`MM8Q6K`
+抓GET包，进小程序获取数据，邀请码请填`58J2BA`
 
 https://apiv2.huazhuanapp.com/api/v1/coin/task/list?
 
