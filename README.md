@@ -30,25 +30,42 @@
 * [wejson](https://wejson.cn/header2json/)
 
 
-### 花赚福利社 hzfls.js(小程序)
+### 咔咔 kaka.js
 
-cron 0 9 * * * 一天一次
+cron 35 9 * * * 一天一次
 
 <details>
 <summary>食用步骤：</summary>
 <br />
 
-* [x] 收益：一天0.2-0.3，跑完到账0.3
+* [x] 收益：填写邀请码（G1BD8MP）自动获得5元，每天提现1元到支付宝
 
 * [x] 多账户：用@隔开
 
-抓GET包，进小程序获取数据，邀请码请填`58J2BA`
+把任意api.imkaka.com捉包头里的Cookie(viewchat_access_token=xxxxxxxxx 这个)填到kakaCookie里
 
-https://apiv2.huazhuanapp.com/api/v1/coin/task/list?
+    export kakaCookie='viewchat_access_token=xxxxxxxxx'
 
-把整条url链接放入变量
+</details>
 
-    export hzflsurl='https://apiv2.huazhuanapp.com/api/v1/coin/task/list?***'
+
+### 卡夫享 kfx.js
+
+cron 11 9 * * * 一天一次
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+* [x] 收益：每天签到1积分，分享一次5积分(每月有上限)  20分换2京东E卡，100分换10元话费，200分换20元话费
+
+* [x] 多账户：用@隔开
+
+注册链接：https://fscrm.kraftheinz.net.cn/?from=G20W5cUuyQ0JR+ISSo7/Ag==
+
+找fscrm.kraftheinz.net.cn的包，把header里的token填到变量kfxtoken里
+
+    export kfxtoken='***'
 
 </details>
 
@@ -61,7 +78,7 @@ cron 0 9 * * * 看任务一天一次就可
 <summary>食用步骤：</summary>
 <br />
 
-* [x] 收益：一天0.6
+* [x] 收益：一天0.6  
 
 * [x] 多账户：用@隔开
 
