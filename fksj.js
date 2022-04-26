@@ -22,7 +22,7 @@ const debug = 0; //0为关闭调试，1为打开调试,默认为0
 //////////////////////
 let fksj_dataArr = [];
 let msg = '';
-let ck = 'i=2&t=0&v=1.0&from=wxapp&c=entry&a=wxapp&do=user&sign=642b60b6ed48657533a0c5acccd73415&m=skai_tooln_c&dopost=update_user_make_stone&userid=18187&stone=0.00';
+let ck = '';
 let fksj_data = process.env.fksj_data;
 /////////////////////////////////////////////////////////
 
