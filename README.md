@@ -202,3 +202,21 @@ https://api.st615.com/v2/user/info
     export jzttWithdrawLimit="***"
 
 </details>
+
+### 疯狂水晶 fksj.js
+
+cron 12 9 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+  下载地址: http://mmwk.mmwl.fun/download/9570691cce3dc93a?user=17803  
+    
+ * 变量格式: export fksj_data=' 签到 # 观看视频 # 京喜红包 @ 签到 # 观看视频 # 京喜红包 '  多个账号用 @分割 
+    
+ * 抓  mmwk.zhilaiw.cn/index.php/Api/Index/index? 抓什么就把抓到的包 ? 后面的写到变量里
+
+   export fksj_data='i=2&t=*** # i=2&t=0***get_some_power_ad_video&*** # i=2&t=0***get_some_gold_ad_video_full&***'
+
+</details>
