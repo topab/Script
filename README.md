@@ -205,7 +205,7 @@ https://api.st615.com/v2/user/info
 
 ### 疯狂水晶 fksj.js
 
-cron 12 9 * * *
+ cron 0 * * * *
 
 <details>
 <summary>食用步骤：</summary>
