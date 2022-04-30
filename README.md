@@ -227,7 +227,7 @@ https://api.st615.com/v2/user/info
 <summary>食用步骤：</summary>
 <br />
 
-  下载地址: http://mmwk.mmwl.fun/download/9570691cce3dc93a?user=18172
+  下载地址: http://jzkg.jmsfx.top/download/1dc7c27b64c47fad?user=69116
     
  * 变量格式: export jzkg_data='userid1 @ userid2'  多个账号用 @分割
  *
