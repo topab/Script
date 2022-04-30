@@ -254,3 +254,19 @@ https://m.lu.com/h5-member/sign/1651333734248?marketFeedbackCode=eyJ1cmxUaWQiOiI
 玩转狗东E卡各种等
 
 </details>
+
+### 超有惠 cyh.js
+
+ cron 30 7 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+  下载地址: https://m.chyouhui.com/page/invite/#/?code=36YC3RF
+    
+ * 变量格式: export cyh_data='androidToken1 @ androidToken2'  多个账号用 @分割
+ *
+ * androidToken :  关键词  t-api.chyouhui.com/auth  ,headers中的一个参数
+
+</details>
