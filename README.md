@@ -218,3 +218,19 @@ https://api.st615.com/v2/user/info
  * userid  小程序(疯狂水晶) app 页面都有
 
 </details>
+
+### 金砖旷工 jzkg.js
+
+ cron 1 * * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+  下载地址: http://mmwk.mmwl.fun/download/9570691cce3dc93a?user=18172
+    
+ * 变量格式: export jzkg_data='userid1 @ userid2'  多个账号用 @分割
+ *
+ * userid   app 页面兑换界面--左上角 有 id
+
+</details>
