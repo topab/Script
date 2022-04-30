@@ -237,7 +237,7 @@ https://api.st615.com/v2/user/info
 
 ### 陆金所 ljs.js
 
- cron 1 * * * *
+ cron 13 15 * * *
 
 <details>
 <summary>食用步骤：</summary>
