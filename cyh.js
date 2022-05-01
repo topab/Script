@@ -3,8 +3,6 @@
  * 下载地址: https://m.chyouhui.com/page/invite/#/?code=36YC3RF
  * 
  * cron 30 7 * * *  cyh.js
- *  
- * 新人任务自己做做吧 很少
  * 
  * ========= 青龙 =========
  * 变量格式: export cyh_data='androidToken1 @ androidToken2'  多个账号用 @分割
@@ -22,6 +20,7 @@ let cyh_dataArr = [];
 let msg = "";
 let ck = "";
 let ad_num = "";
+let ad_video_infoArr = '';
 /////////////////////////////////////////////////////////
 
 async function tips(ckArr) {
@@ -64,24 +63,107 @@ async function tips(ckArr) {
 
 async function start() {
 
-
-	console.log("开始 签到");
-	await signin();
+	console.log("开始 用户/积分信息");
+	await userInfo();
 	await $.wait(2 * 1000);
 
+	console.log("开始 签到状态");
+	await signin_info();
+	await $.wait(2 * 1000);
 
-	ad_num = 1;
-	for (ad_num; ad_num < 11; ad_num++) {
-		console.log(`开始 观看第 ${ad_num} 个视频`);
-		ran_num = randomInt(60, 80)
-		await ad_video();
-		console.log(`请耐心等待 ${ran_num} 秒,再看下一个视频`);
-		await $.wait(ran_num * 1000);
-	}
-
+	console.log("开始 检查视频状态");
+	await ad_video_info();
+	await $.wait(2 * 1000);
 
 	await SendMsg(msg);
 }
+
+
+
+/**
+ * 用户信息   get
+ * https://t-api.chyouhui.com/auth/user/my
+ */
+async function userInfo(timeout = 3 * 1000) {
+
+	let url = {
+		url: `https://t-api.chyouhui.com/auth/user/my`,
+		headers: {
+			'androidToken': ck,
+			'Host': 't-api.chyouhui.com',
+		},
+		// body: '{}',
+	};
+
+	let result = await httpGet(url, `用户信息`, timeout);
+	if (result.code == 0) {
+		console.log(
+			`\n 用户信息:${result.message} 🎉  \n欢迎光临:${result.data.username} , 等级:${result.data.currentGrade} \n`
+		);
+		await integral_info();
+
+	} else {
+		console.log(`\n 用户信息: ${result.message} \n `);
+	}
+}
+
+/**
+ * 积分信息   get
+ * https://t-api.chyouhui.com/auth/sellIntegral/wallet
+ */
+async function integral_info(timeout = 3 * 1000) {
+
+	let url = {
+		url: `https://t-api.chyouhui.com/auth/sellIntegral/wallet`,
+		headers: {
+			'androidToken': ck[0],
+			'Host': 't-api.chyouhui.com',
+		},
+		// body: '{}',
+	};
+
+	let result = await httpGet(url, `积分信息`, timeout);
+	if (result.code == 0) {
+		console.log(`\n 总积分:${result.data.myIntegral} , 可出售:${result.data.convertibleIntegral} , 可提现金额:${result.data.withdrawAmount} 元 \n`);
+
+	} else {
+		console.log(`\n 积分信息: ${result.message} \n `);
+	}
+}
+
+
+
+
+
+/**
+ * 签到状态   get
+ * https://t-api.chyouhui.com/auth/dailySignIn/data
+ */
+async function signin_info(timeout = 3 * 1000) {
+
+	let url = {
+		url: `https://t-api.chyouhui.com/auth/dailySignIn/data`,
+		headers: {
+			'androidToken': ck[0],
+			'Host': 't-api.chyouhui.com',
+		},
+		// body: '',
+	};
+
+	let result = await httpGet(url, `签到状态`, timeout);
+	if (result.code == 0) {
+		console.log(`\n 签到状态: ${result.message} 🎉  \n`);
+		if (result.data.todayState !== 'SIGN') {
+			console.log(`没有签到,去签到!`);
+			await signin();
+		} else {
+			console.log(`今天已经签到了,明天再来吧!`);
+		}
+	} else {
+		console.log(`\n 签到状态: ${result.message} \n `);
+	}
+}
+
 
 
 /**
@@ -93,7 +175,7 @@ async function signin(timeout = 3 * 1000) {
 	let url = {
 		url: `https://t-api.chyouhui.com/auth/dailySignIn/completed`,
 		headers: {
-			'androidToken': ck,
+			'androidToken': ck[0],
 			'Host': 't-api.chyouhui.com',
 		},
 		body: '{}',
@@ -111,6 +193,54 @@ async function signin(timeout = 3 * 1000) {
 	}
 }
 
+
+
+/**
+ * 检查视频状态   get
+ * https://t-api.chyouhui.com/auth/watchVideo/pageData
+ */
+async function ad_video_info(timeout = 3 * 1000) {
+
+	let url = {
+		url: `https://t-api.chyouhui.com/auth/watchVideo/pageData`,
+		headers: {
+			'androidToken': ck[0],
+			'Host': 't-api.chyouhui.com',
+		},
+		// body: '{}',
+	};
+
+	let result = await httpGet(url, `检查视频状态`, timeout);
+	if (result.code == 0) {
+		console.log(
+			`\n 检查视频状态:${result.message} 🎉 \n`
+		);
+		ad_video_infoArr = result.data.watchTaskList;
+		// console.log(ad_video_infoArr);
+		for (const elem of ad_video_infoArr) {
+			// console.log(elem.completed);
+			if (elem.completed == 0) {
+				console.log(`开始看第 ${elem.id} 个视频`);
+				ad_num = elem.id;
+				ran_num = randomInt(60, 80)
+				await ad_video();
+				console.log(`请耐心等待 ${ran_num} 秒,再看下一个视频吧!`);
+				await $.wait(ran_num * 1000);
+			} else {
+				console.log(`视频 ${elem.id} 已经看完了鸭!`);
+
+			}
+		}
+
+	} else {
+		console.log(`\n 检查视频状态: ${result.message} \n `);
+	}
+}
+
+
+
+
+
 /**
  * 观看视频   post
  * https://t-api.chyouhui.com/auth/watchVideo/completed/6
@@ -120,7 +250,7 @@ async function ad_video(timeout = 3 * 1000) {
 	let url = {
 		url: `https://t-api.chyouhui.com/auth/watchVideo/completed/${ad_num}`,
 		headers: {
-			'androidToken': ck,
+			'androidToken': ck[0],
 			'Host': 't-api.chyouhui.com',
 		},
 	};
@@ -128,7 +258,7 @@ async function ad_video(timeout = 3 * 1000) {
 	let result = await httpPost(url, `观看视频`, timeout);
 	if (result.code == 0) {
 		console.log(
-			`\n 观看视频:${result.message} 🎉  , 下一个视频是第 ${result.data.nextId} 个视频 \n 本次观看视频获得积分 ${result.data.integral} ,累计有积分 ${result.data.surplusIntegral}\n`
+			`\n 观看视频:${result.message} 🎉  , 下一个视频是第 ${result.data.nextId} 个视频 \n 本次观看视频获得积分 ${result.data.integral} ,剩余未领取积分 ${result.data.surplusIntegral}\n`
 		);
 
 	} else if (result.code == -1) {
@@ -137,6 +267,8 @@ async function ad_video(timeout = 3 * 1000) {
 		console.log(`\n 观看视频:  失败 ❌ 了呢,原因未知！\n ${result} \n `);
 	}
 }
+
+
 
 
 
