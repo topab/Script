@@ -217,6 +217,12 @@ https://api.st615.com/v2/user/info
  *
  * userid  小程序(疯狂水晶) app 页面都有
 
+ * 4-26 完成 签到 , 观看视频 , 京喜红包 任务   有bug及时反馈
+ * 4-26 更新随机时间间隔
+ * 4-28 感谢大佬的指导.终于解决了md5的sign,变量简化,无需抓包了
+ * 4-29 更新任务 红包雨 现在已完成的任务(签到 , 观看视频 , 京喜红包 , 红包雨 , 一键收矿石(需要开启条件))
+ * 5-1  默认打开 一键收矿石 不需要的自己禁用
+    
 </details>
 
 ### 金砖旷工 jzkg.js
@@ -233,6 +239,9 @@ https://api.st615.com/v2/user/info
  *
  * userid   app 页面兑换界面--左上角 有 id
 
+ * 4-30 更已完成的任务 签到 , 观看视频 , 京喜红包 , 红包雨 , 一键收矿石(需要开启条件))
+ * 薅了可能有,不薅一定没有,别问收益!!
+    
 </details>
 
 ### 陆金所 ljs.js
@@ -269,4 +278,8 @@ https://m.lu.com/h5-member/sign/1651333734248?marketFeedbackCode=eyJ1cmxUaWQiOiI
  *
  * androidToken :  关键词  t-api.chyouhui.com/auth  ,headers中的一个参数
 
+ * 4-30 完成 签到  , 日常视频 任务   
+ * 5-1  更新逻辑
+ * 5-3  增加出售100积分 , 增加支付宝提现 1 元
+    
 </details>
