@@ -283,3 +283,23 @@ https://m.lu.com/h5-member/sign/1651333734248?marketFeedbackCode=eyJ1cmxUaWQiOiI
  * 5-3  增加出售100积分 , 增加支付宝提现 1 元
     
 </details>
+
+### 咸鱼要躺平 xyytp.js
+
+ cron 45 12 * * *
+
+<details>
+<summary>食用步骤：</summary>
+<br />
+
+ * 咸鱼要躺平（小程序）
+ * 收益：一天 1 元，提现到支付宝
+    
+ * 变量格式: export xyytp_data='token1 @ token2'  多个账号用 @分割
+    
+ * token :  关键词  s76.yyyyy.run/api  找到 token 就行了
+
+ * 5-2	完成 签到 任务
+ * 5-5	完成提现
+    
+  <details>  
