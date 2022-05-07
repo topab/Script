@@ -186,7 +186,6 @@ async function lingqu(timeout = 3 * 1000) {
 	if (result.code == 1) {
 		console.log(`\n 领取昨日收益:${result.msg} 🎉 \n`);
 		msg += `\n 领取昨日收益:${result.msg} 🎉 \n`
-		await sctxsj();
 	} else if (result.code == 0) {
 		console.log(`\n 领取昨日收益:${result.msg} \n`);
 		msg += `\n 领取昨日收益:${result.msg} \n`
