@@ -97,6 +97,9 @@ cron 38 7-22 * * * (每天15次)
 <details>
 <summary>食用步骤：</summary>
 <br />
+    
+  邀请码：185938386
+    
 抓POST包，进入积分换好礼页面即可获取数据，只要有Cookie就行
 
 https://api.kuaishouzt.com/rest/zt/appsupport/yoda/accelerate/info
