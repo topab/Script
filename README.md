@@ -90,7 +90,7 @@ cron 0 9 * * * 看任务一天一次就可
 </details>
 
 
-### 快手极速版 ksjsb.js (leaf版)
+### 快手极速版 ksjsb.js (leaf版和不定时更新可用版)
 
 cron 38 7-22 * * * (每天15次)
 
