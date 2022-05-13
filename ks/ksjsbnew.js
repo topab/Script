@@ -8,7 +8,8 @@
  * 
  * ========= 青龙--配置文件 =========
  * 变量格式: export ksjsb_data='xxxxx'  多个账号用 @分割 或者 换行分割
- *
+ * 
+ * ck 格式：ksjsb_data='kpn=xxxx; kpf=xxxxxx; userId=xxx; did=xxxxx; c=XIAOMI; ver=10.3; appver=10.3.40.3316; language=zh-cn; countryCode=CN; sys=ANDROID_12; mod=Xiaomi%2822041211AC%29; net=WIFI; deviceName=Xiaomi%2822041211AC%29; isp=CTCC; ud=2669033773; did_tag=2; egid=xxxxx; thermal=10000; kcv=1458; app=0; bottom_navigation=true; oDid=TEST_ANDROID_3d6b43d17d44f3f3; android_os=0; boardPlatform=mt6895; androidApiLevel=31; newOc=XIAOMI; slh=0; country_code=cn; nbh=42; hotfix_ver=; did_gt=1651930966674; keyconfig_state=2; max_memory=256; oc=XIAOMI; sh=2400; ddpi=420; deviceBit=0; browseType=3; power_mode=0; socName=MediaTek+MT6895; is_background=0; sw=1080; ftt=; apptype=22; abi=arm64; cl=0; userRecoBit=0; device_abi=arm64; totalMemory=7428; grant_browse_type=AUTHORIZED; iuid=; rdid=ANDROID_1ae44b815a729efa; sbh=78; darkMode=false; kuaishou.api_st=xxxxxxxxx; token=xxxxxx; kuaishou.h5_st=xxxxxx; sid=xxxx; cold_launch_time_ms=1652346736025; __NSWJ=xxxx'
  */
 const $ = new Env("快手极速版");
 const notify = $.isNode() ? require("./sendNotify") : "";
