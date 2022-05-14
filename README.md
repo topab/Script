@@ -228,23 +228,17 @@ https://api.st615.com/v2/user/info
     
 </details>
 
-### 金砖旷工 jzkg.js
+### 美团 mt.js
 
- cron 1 * * * *
+ cron 23 8 * * *
 
 <details>
 <summary>食用步骤：</summary>
 <br />
+   
+ * 百度 美团登录自己抓Token ，美团小程序首页天天赚钱   
+ * 变量格式: export mtTk='Token1@Token2'  多个账号用 @分割
 
-  下载地址: http://jzkg.jmsfx.top/download/1dc7c27b64c47fad?user=69116
-    
- * 变量格式: export jzkg_data='userid1 @ userid2'  多个账号用 @分割
- *
- * userid   app 页面兑换界面--左上角 有 id
-
- * 4-30 更已完成的任务 签到 , 观看视频 , 京喜红包 , 红包雨 , 一键收矿石(需要开启条件))
- * 薅了可能有,不薅一定没有,别问收益!!
-    
 </details>
 
 ### 陆金所 ljs.js
